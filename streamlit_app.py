@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn import preprocessing
 
 ###### Load Models
 linear_regression = pickle.load(open('serialization/models/linear_regression.pickle', 'rb'))
