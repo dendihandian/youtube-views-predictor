@@ -17,6 +17,9 @@ scaler_dislikes = pickle.load(open('serialization/utilities/scaler_dislikes.pick
 scaler_comment_count = pickle.load(open('serialization/utilities/scaler_comment_count.pickle', 'rb'))
 scaler_views = pickle.load(open('serialization/utilities/scaler_views.pickle', 'rb'))
 
+###### Serialized Dataframes
+metrics_result = pickle.load(open('serialization/dataframes/metrics_result.pickle', 'rb'))
+
 ###### Variables
 likes = 0
 dislikes = 0
@@ -116,6 +119,9 @@ with st.container():
         if views != None:
             st.metric('Views', round(views), delta=None, delta_color="normal")
 
+st.write("""__________""")
 
-# with st.container():
-#     st.header('TODO')
+with st.container():
+    st.header('Model Evaluation')
+
+    st.dataframe(metrics_result)
