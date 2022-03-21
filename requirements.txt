@@ -1,0 +1,10 @@
+joblib==1.1.0; python_version >= "3.7"
+numpy==1.22.3; python_version >= "3.8"
+pandas==1.4.1; python_version >= "3.8"
+python-dateutil==2.8.2; python_version >= "3.8" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.8"
+pytz==2022.1; python_version >= "3.8"
+scikit-learn==1.0.2; python_version >= "3.7"
+scipy==1.6.1; python_version >= "3.7"
+six==1.16.0; python_version >= "3.8" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.8"
+sklearn==0.0
+threadpoolctl==3.1.0; python_version >= "3.7"

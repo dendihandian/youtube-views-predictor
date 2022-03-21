@@ -4,8 +4,13 @@ Youtube Views Predictor based on `Trending Youtube Video Statistic` dataset
 
 ## Requirement
 
+Development:
 - Anaconda
 - Streamlit Package (Install via Anaconda)
+
+Production (Streamlit):
+- Python 3.9 or newer
+- Poetry Dependency Manager
 
 ## Development
 
@@ -29,4 +34,14 @@ pip install streamlit
 run the streamlit development server:
 ```
 streamlit run streamlit_app.py
+```
+
+## Deployment (Streamlit)
+
+```
+poetry install
+```
+
+```
+poetry export -f requirements.txt --without-hashes > requirements.txt
 ```
