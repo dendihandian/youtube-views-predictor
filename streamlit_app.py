@@ -11,7 +11,7 @@ lasso_tuned = pickle.load(open('serialization/models/lasso_tuned.pickle', 'rb'))
 ridge_tuned = pickle.load(open('serialization/models/ridge_tuned.pickle', 'rb'))
 
 ###### Load Utilities
-min_max = pickle.load(open('serialization/utilities/min_and_max.pickle', 'rb')) # use st.json(min_max) to debug
+min_max = pickle.load(open('serialization/utilities/min_and_max.pickle', 'rb')) # NOTE: you can debug the min_max using st.json(min_max)
 scaler_likes = pickle.load(open('serialization/utilities/scaler_likes.pickle', 'rb'))
 scaler_dislikes = pickle.load(open('serialization/utilities/scaler_dislikes.pickle', 'rb'))
 scaler_comment_count = pickle.load(open('serialization/utilities/scaler_comment_count.pickle', 'rb'))
@@ -51,25 +51,33 @@ def predict(parameters, modelname):
     if (modelname == models[0]):
 
         output = linear_regression.predict(inputs)
+        output = output[0][0]
 
     elif (modelname == models[1]):
 
         output = ridge_tuned.predict(inputs)
+        output = output[0][0]
 
     elif (modelname == models[2]):
 
         output = lasso_tuned.predict(inputs)
+        output = output[0]
 
     elif (modelname == models[3]):
 
         output = elasticnet_tuned.predict(inputs)
+        output = output[0]
 
     elif (modelname == models[4]):
 
         output = decision_tree_regressor.predict(inputs)
+        output = output[0]
+
+    # NOTE: some output from the model may have different shape. debug it with st.write(output.shape)
 
     if (output):
-        views = scaler_views.inverse_transform(np.array([output[0][0]]).reshape(1, -1))[0][0]
+
+        views = scaler_views.inverse_transform(np.array([output]).reshape(1, -1))[0][0]
 
     return views
 
