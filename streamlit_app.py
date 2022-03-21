@@ -85,9 +85,16 @@ def predict(parameters, modelname):
 
 st.title('Youtube Views Predictor', anchor=None)
 
+st.write("""
+    - [Exploratory Data Analysis](https://github.com/dendihandian/youtube-views-predictor/blob/main/trending-youtube-video-statistics.ipynb)
+    - [Dataset](https://www.kaggle.com/datasnaek/youtube-new)
+""")
+
+st.write("""__________""")
+
 with st.container():
 
-    st.header('Views Regressor')
+    st.header('Views Predictor')
 
     with st.container():
 
