@@ -30,6 +30,9 @@ install streamlit package:
 ```
 pip install streamlit
 ```
+```
+pip install sklearn
+```
 
 run the streamlit development server:
 ```
@@ -38,10 +41,14 @@ streamlit run streamlit_app.py
 
 ## Deployment (Streamlit)
 
+> `streamlit` package already added in the streamlit runtime. no need to install.
+
+install production dependencies:
 ```
 poetry install
 ```
 
+export production dependencies:
 ```
 poetry export -f requirements.txt --without-hashes > requirements.txt
 ```
