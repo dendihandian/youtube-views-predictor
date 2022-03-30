@@ -6,7 +6,6 @@ likes = 0
 dislikes = 0
 comment_count = 0
 views = None
-predicting = False
 
 ###### The App
 
@@ -31,9 +30,7 @@ with st.container():
 
         modelname = st.selectbox('Model', model_names)
 
-        predicting = st.button('Predict')
-
-        if predicting:
+        if st.button('Predict'):
             views = predict({
                 'likes': likes,
                 'dislikes': dislikes,
